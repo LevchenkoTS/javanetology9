@@ -13,9 +13,6 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
-            return;
-        }
         this.currentVolume = currentVolume;
     }
 
@@ -24,12 +21,6 @@ public class Radio {
     }
 
     public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
-        if (currentRadioStationNumber < 0) {
-            return;
-        }
-        if (currentRadioStationNumber > 9) {
-            return;
-        }
         this.currentRadioStationNumber = currentRadioStationNumber;
     }
 
