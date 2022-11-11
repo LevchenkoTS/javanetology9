@@ -27,6 +27,9 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            return;
+        }
         this.currentVolume = currentVolume;
     }
 
