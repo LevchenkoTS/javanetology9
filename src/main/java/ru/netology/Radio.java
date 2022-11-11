@@ -2,55 +2,73 @@ package ru.netology;
 
 public class Radio {
 
-    public int currentVolume;
+    private int currentVolume;
+    private int currentRadioStationNumber;
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-    public void setIncreaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 10) {
-            currentVolume = newCurrentVolume + 1;
-        } else {
-            currentVolume = newCurrentVolume;
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            return;
         }
+        if (currentVolume > 10) {
+            return;
+        }
+        this.currentVolume = currentVolume;
     }
 
-    public void setReduceVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 0) {
-            currentVolume = newCurrentVolume - 1;
-        } else {
-            currentVolume = newCurrentVolume;
-        }
-    }
-
-
-    public int currentRadioStationNumber;
-
-    public int getRadioStationNumber() {
+    public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
     }
 
-    public void setNextRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber < 9) {
-            currentRadioStationNumber = newRadioStationNumber + 1;
+    public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
+        if (currentRadioStationNumber < 0) {
+            return;
+        }
+        if (currentRadioStationNumber > 9) {
+            return;
+        }
+        this.currentRadioStationNumber = currentRadioStationNumber;
+    }
+
+
+    public void increaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+    }
+
+    public void reduceVolume() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+    }
+
+
+
+
+    public void nextRadioStationNumber() {
+        if (currentRadioStationNumber < 9) {
+            currentRadioStationNumber = currentRadioStationNumber + 1;
         } else {
             currentRadioStationNumber = 0;
         }
     }
 
-    public void setPrevRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber > 0) {
-            currentRadioStationNumber = newRadioStationNumber - 1;
+    public void prevRadioStationNumber() {
+        if (currentRadioStationNumber > 0) {
+            currentRadioStationNumber = currentRadioStationNumber - 1;
         } else {
             currentRadioStationNumber = 9;
         }
     }
-    public void setManualEntryRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber > 9) {
+    public void setManualEntryRadioStationNumber(int newCurrentRadioStationNumber) {
+        if (newCurrentRadioStationNumber > 9) {
             return;
         }
-        currentRadioStationNumber = newRadioStationNumber;
+        currentRadioStationNumber = newCurrentRadioStationNumber;
     }
 }
 
