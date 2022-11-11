@@ -46,6 +46,18 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
     @Test
+    public void shouldNotReduceVolumeWhenUnderMin() {
+        Radio radio = new Radio();
+
+        radio.setCurrentVolume(-1);
+        radio.reduceVolume();
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
     public void shouldReduceVolume() {
         Radio radio = new Radio();
 
